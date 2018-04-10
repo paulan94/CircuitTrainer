@@ -1,0 +1,175 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.paul.circuittrainer.MainFragment"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/boxingglovesmaller">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--need to set min val-->
+        <TextView
+            android:id="@+id/round_str"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/round_settings_layout"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/bangers"
+            android:text="@string/num_round_str"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF" />
+
+        <RelativeLayout
+            android:id="@+id/round_settings_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/round_timer"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp">
+
+            <EditText
+                android:id="@+id/num_rounds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/bangers"
+                android:hint="@string/round_num_edittext"
+                android:inputType="number"
+                android:maxLength="2"
+                android:nextFocusDown="@id/round_time_mins"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/round_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/bangers"
+            android:layout_above="@id/round_time_layout"
+            android:layout_centerHorizontal="true"
+            android:text="@string/round_timer_settings"
+            android:textAlignment="center" />
+
+        <RelativeLayout
+            android:id="@+id/round_time_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+
+            <EditText
+                android:id="@+id/round_time_mins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:hint='@string/round_time_edittext_mins'
+                android:inputType="number"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:fontFamily="@font/bangers"
+                android:maxLength="2"
+                android:nextFocusDown="@id/round_time_secs"
+                android:nextFocusRight="@id/round_time_secs"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/round_time_secs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/round_time_mins"
+                android:fontFamily="@font/bangers"
+                android:hint='@string/round_time_edittext_secs'
+                android:inputType="number"
+                android:maxLength="2"
+                android:nextFocusDown="@id/rest_time_mins"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/rest_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/round_time_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/bangers"
+            android:text="@string/rest_timer_settings"
+            android:textAlignment="center" />
+
+        <RelativeLayout
+            android:id="@+id/rest_timer_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rest_round"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="10dp">
+
+
+            <EditText
+                android:id="@+id/rest_time_mins"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:hint='@string/round_time_edittext_mins'
+                android:textColor="#FFFFFF"
+                android:inputType="number"
+                android:textColorHint="#FFFFFF"
+                android:maxLength="2"
+                android:fontFamily="@font/bangers"
+                android:nextFocusDown="@id/rest_time_secs"
+                android:nextFocusRight="@id/rest_time_secs"
+                android:textAlignment="center" />
+
+            <EditText
+                android:id="@+id/rest_time_secs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:textColor="#FFFFFF"
+                android:layout_toEndOf="@+id/rest_time_mins"
+                android:hint='@string/round_time_edittext_secs'
+                android:textColorHint="#FFFFFF"
+                android:inputType="number"
+                android:maxLength="2"
+                android:fontFamily="@font/bangers"
+                android:textAlignment="center" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rest_timer_layout"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/bangers"
+            android:background="@drawable/fight_button"
+            android:textColor="#FFFFFF"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="@string/start_button" />
+
+
+    </RelativeLayout>
+</FrameLayout>
